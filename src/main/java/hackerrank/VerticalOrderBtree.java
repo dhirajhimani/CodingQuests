@@ -46,6 +46,7 @@ public class VerticalOrderBtree
             get.add(root.key);
 
         m.put(hd, get);
+        System.out.print(" " + hd);
 
         // Store nodes in left subtree
         getVerticalOrder(root.left, hd-1, m);
@@ -66,9 +67,10 @@ public class VerticalOrderBtree
 
         // Traverse the map and print nodes at every horigontal
         // distance (hd)
+        System.out.println("");
         for (Entry<Integer, Vector<Integer>> entry : m.entrySet())
         {
-            System.out.println(entry.getValue());
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
     }
 
