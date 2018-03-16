@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.tree;
 
 // Java program for printing vertical order of a given binary tree
 import java.util.TreeMap;

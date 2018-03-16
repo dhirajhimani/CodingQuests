@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.tree;
 
 
 // This solution is only for balanced binary tree.

@@ -1,6 +1,6 @@
-package hackerrank;
+package hackerrank.tree;
 
-import static hackerrank.PrintTreeLevelWise.levelOrder;
+import static hackerrank.tree.PrintTreeLevelWise.levelOrder;
 
 public class LevelOrderTreeTraversal {
 

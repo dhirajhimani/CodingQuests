@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.tree;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,16 +6,16 @@ import java.util.List;
 
 public class BTreePrinterTest {
 
-    private static Node<Integer> test1() {
-        Node<Integer> root = new Node<Integer>(2);
-        Node<Integer> n11 = new Node<Integer>(7);
-        Node<Integer> n12 = new Node<Integer>(5);
-        Node<Integer> n21 = new Node<Integer>(2);
-        Node<Integer> n22 = new Node<Integer>(6);
-        Node<Integer> n23 = new Node<Integer>(3);
-        Node<Integer> n24 = new Node<Integer>(6);
-        Node<Integer> n31 = new Node<Integer>(5);
-        Node<Integer> n32 = new Node<Integer>(8);
+    public static Node<Integer> test1() {
+        Node<Integer> root = new Node<Integer>(1);
+        Node<Integer> n11 = new Node<Integer>(2);
+        Node<Integer> n12 = new Node<Integer>(3);
+        Node<Integer> n21 = new Node<Integer>(4);
+        Node<Integer> n22 = new Node<Integer>(5);
+        Node<Integer> n23 = new Node<Integer>(6);
+        Node<Integer> n24 = new Node<Integer>(7);
+        Node<Integer> n31 = new Node<Integer>(8);
+        Node<Integer> n32 = new Node<Integer>(9);
         Node<Integer> n33 = new Node<Integer>(4);
         Node<Integer> n34 = new Node<Integer>(5);
         Node<Integer> n35 = new Node<Integer>(8);
@@ -99,7 +99,7 @@ class BTreePrinter {
             return;
 
         int floor = maxLevel - level;
-        int endgeLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
+        int edgeLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
         int firstSpaces = (int) Math.pow(2, (floor)) - 1;
         int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
 
@@ -121,11 +121,11 @@ class BTreePrinter {
         }
         System.out.println("");
 
-        for (int i = 1; i <= endgeLines; i++) {
+        for (int i = 1; i <= edgeLines; i++) {
             for (int j = 0; j < nodes.size(); j++) {
                 BTreePrinter.printWhitespaces(firstSpaces - i);
                 if (nodes.get(j) == null) {
-                    BTreePrinter.printWhitespaces(endgeLines + endgeLines + i + 1);
+                    BTreePrinter.printWhitespaces(edgeLines + edgeLines + i + 1);
                     continue;
                 }
 
@@ -141,7 +141,7 @@ class BTreePrinter {
                 else
                     BTreePrinter.printWhitespaces(1);
 
-                BTreePrinter.printWhitespaces(endgeLines + endgeLines - i);
+                BTreePrinter.printWhitespaces(edgeLines + edgeLines - i);
             }
 
             System.out.println("");
@@ -155,6 +155,7 @@ class BTreePrinter {
             System.out.print(" ");
     }
 
+    // Height of Tree
     private static <T extends Comparable<?>> int maxLevel(Node<T> node) {
         if (node == null)
             return 0;

@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

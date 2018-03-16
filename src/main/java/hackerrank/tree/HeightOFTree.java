@@ -1,14 +1,29 @@
-package hackerrank;
+package hackerrank.tree;
 
-import static hackerrank.PrintTreeLevelWise.*;
+import static hackerrank.tree.PrintTreeLevelWise.*;
 
 // TODO - Also do calculate Left and Right Tree Height
 public class HeightOFTree {
 
     public static void main(String[] args) {
-        System.out.println(getHeight(createDummyTree()));
+
+        Node rootTest1 = createDummyTree();
+
+        BTreePrinter.printNode(rootTest1);
+        System.out.println("Full Tree Height -> " + getHeight(rootTest1));
+        System.out.println("Left Tree Height -> " + (getTreeLeftPartHeight(rootTest1) + 1));
+        System.out.println("Right Tree Height -> " + (getTreeRightPartHeight(rootTest1) + 1));
+
+
+//        BTreePrinter.printNode(BTreePrinterTest.test1());
+//        System.out.println(getHeight(BTreePrinterTest.test1()));
+
+
+
         // One more solution
         System.out.println(new HeightOFTree().height(createDummyTree()));
+
+
     }
 
     public static int getHeight(Node root){
@@ -18,6 +33,14 @@ public class HeightOFTree {
         else{
             return 1 + Math.max( getHeight(root.left), getHeight(root.right) );
         }
+    }
+
+    public static int getTreeLeftPartHeight(Node root) {
+        return getHeight(root.left);
+    }
+
+    public static int getTreeRightPartHeight(Node root) {
+        return getHeight(root.right);
     }
 
     int max = 0;
