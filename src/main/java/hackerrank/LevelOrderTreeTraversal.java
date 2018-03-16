@@ -27,8 +27,7 @@ public class LevelOrderTreeTraversal {
         /* function to print level order traversal of tree*/
         void printLevelOrder() {
             int h = height(root);
-            int i;
-            for (i = h; i >= 1; i--)
+            for (int i = 1; i <= h; i++)
                 printGivenLevel(root, i);
         }
 
