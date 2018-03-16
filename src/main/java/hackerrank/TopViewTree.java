@@ -1,17 +1,8 @@
 package hackerrank;
 
+
 // This solution is only for balanced binary tree.
 public class TopViewTree {
-
-    static class Node {
-        int data;
-        Node left, right;
-
-        public Node(int item) {
-            data = item;
-            left = right = null;
-        }
-    }
 
 
     public static void main(String[] args) {

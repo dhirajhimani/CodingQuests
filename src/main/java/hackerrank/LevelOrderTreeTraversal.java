@@ -1,24 +1,16 @@
 package hackerrank;
 
+import static hackerrank.PrintTreeLevelWise.levelOrder;
+
 public class LevelOrderTreeTraversal {
 
     // Recursive Java program for level order traversal of Binary Tree
 
     /* Class containing left and right child of current
        node and key value*/
-    static class Node {
-        int data;
-        Node left, right;
-
-        public Node(int item) {
-            data = item;
-            left = right = null;
-        }
-    }
-
     static class BinaryTree {
         // Root of the Binary Tree
-        Node root;
+        Node<Integer> root;
 
         public BinaryTree() {
             root = null;
@@ -72,7 +64,12 @@ public class LevelOrderTreeTraversal {
             tree.root.left.right = new Node(5);
 
             System.out.println("Level order traversal of binary tree is ");
+            //Using Recursion
             tree.printLevelOrder();
+
+            // Using Collections
+            levelOrder(tree.root);
         }
     }
+
 }

@@ -7,26 +7,10 @@ import java.util.Map.Entry;
 
 public class VerticalOrderBtree
 {
-    // Tree node
-    static class Node
-    {
-        int key;
-        Node left;
-        Node right;
-
-        // Constructor
-        Node(int data)
-        {
-            key = data;
-            left = null;
-            right = null;
-        }
-    }
-
     // Utility function to store vertical order in map 'm'
     // 'hd' is horizontal distance of current node from root.
     // 'hd' is initially passed as 0
-    static void getVerticalOrder(Node root, int hd,
+    static void getVerticalOrder(Node<Integer> root, int hd,
                                  TreeMap<Integer,Vector<Integer>> m)
     {
         // Base case
@@ -40,10 +24,10 @@ public class VerticalOrderBtree
         if(get == null)
         {
             get = new Vector<>();
-            get.add(root.key);
+            get.add(root.data);
         }
         else
-            get.add(root.key);
+            get.add(root.data);
 
         m.put(hd, get);
         System.out.print(" " + hd);
