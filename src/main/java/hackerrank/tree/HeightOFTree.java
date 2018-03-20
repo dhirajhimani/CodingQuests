@@ -1,5 +1,6 @@
 package hackerrank.tree;
 
+import static hackerrank.tree.BTreePrinterTest.test1;
 import static hackerrank.tree.PrintTreeLevelWise.*;
 
 // TODO - Also do calculate Left and Right Tree Height
@@ -7,7 +8,7 @@ public class HeightOFTree {
 
     public static void main(String[] args) {
 
-        Node rootTest1 = createDummyTree();
+        Node rootTest1 = test1();
 
         BTreePrinter.printNode(rootTest1);
         System.out.println("Full Tree Height -> " + getHeight(rootTest1));
@@ -21,7 +22,7 @@ public class HeightOFTree {
 
 
         // One more solution
-        System.out.println(new HeightOFTree().height(createDummyTree()));
+        System.out.println(new HeightOFTree().height(test1()));
 
 
     }
