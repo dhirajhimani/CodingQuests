@@ -5,7 +5,7 @@
     <br>Solutions to HackerRank problems
 </p>
 
-* [Functional Programming](#Functional Programming)
+* [Functional Programming](#Functional_Programming)
 * [Data Structures](#data-structures)
     <br>
     -[Tree](#Tree)
