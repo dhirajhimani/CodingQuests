@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 // https://www.hackerrank.com/challenges/swap-nodes-algo/problem
 
+// https://github.com/dhirajhimani/CodingQuests/blob/master/src/main/java/hackerrank/tree/SwapNodes.java
+
 public class SwapNodes {
 
     public static void main(String[] args) throws IOException {
