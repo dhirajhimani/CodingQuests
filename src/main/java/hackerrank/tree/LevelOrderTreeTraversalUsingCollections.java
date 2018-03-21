@@ -3,7 +3,7 @@ package hackerrank.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class PrintTreeLevelWise {
+public class LevelOrderTreeTraversalUsingCollections {
 
     private static Queue<Node> queue = new LinkedList<Node>();
 

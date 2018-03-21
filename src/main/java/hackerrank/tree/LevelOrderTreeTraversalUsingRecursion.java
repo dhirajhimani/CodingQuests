@@ -1,15 +1,14 @@
 package hackerrank.tree;
 
-import static hackerrank.tree.PrintTreeLevelWise.levelOrder;
+import static hackerrank.tree.LevelOrderTreeTraversalUsingCollections.levelOrder;
 
-public class LevelOrderTreeTraversal {
+public class LevelOrderTreeTraversalUsingRecursion {
 
     // Recursive Java program for level order traversal of Binary Tree
 
     /* Class containing left and right child of current
        node and key value*/
     static class BinaryTree {
-        // Root of the Binary Tree
         Node<Integer> root;
 
         public BinaryTree() {

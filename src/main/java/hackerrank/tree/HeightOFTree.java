@@ -1,7 +1,6 @@
 package hackerrank.tree;
 
 import static hackerrank.tree.BTreePrinterTest.test1;
-import static hackerrank.tree.PrintTreeLevelWise.*;
 
 // TODO - Also do calculate Left and Right Tree Height
 public class HeightOFTree {
