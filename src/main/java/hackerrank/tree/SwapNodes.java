@@ -13,36 +13,35 @@ public class SwapNodes {
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        BNodeChild[] bNodeChildren = new BNodeChild[N];
-        final int totalValues = N;
-        while (N > 0) {
-            bNodeChildren[totalValues - N] = new BNodeChild(scanner.nextInt(), scanner.nextInt());
-            N--;
-        }
-
-        Node root = createTreebyBNodes(bNodeChildren);
+        NodeLeftRightVal[] vals = readNodeVals(scanner);
+        Node root = createTreebyBNodes(vals);
 //        BTreePrinter.printNode(root);
-        int T = scanner.nextInt();
-        int[] depths = new int[T];
-        int count = 0;
-        while (T > 0) {
-            depths[count++] = scanner.nextInt();
-            T--;
-        }
+        int[] depths = getDepthsOfTreeToSwap(scanner);
         startSwappingNodes(root, depths);
+        scanner.close();
     }
 
-    private static Node createTreebyBNodes(BNodeChild[] bNodeChildren) {
+    private static NodeLeftRightVal[] readNodeVals(Scanner scanner) {
+        final int totalValues = scanner.nextInt();
+        int counter = totalValues;
+        NodeLeftRightVal[] vals = new NodeLeftRightVal[totalValues];
+        while (counter > 0) {
+            int index = totalValues - counter;
+            vals[index] = new NodeLeftRightVal(scanner.nextInt(), scanner.nextInt());
+            counter--;
+        }
+        return vals;
+    }
+
+    private static Node createTreebyBNodes(NodeLeftRightVal[] leftRightVals) {
         Node<Integer> root = new Node<Integer>(1);
         Queue<Node> queue = new LinkedList<Node>();
         queue.add(root);
-        for (BNodeChild bNodeChild: bNodeChildren) {
-            addChildToTree(queue, root, bNodeChild.leftVal, bNodeChild.rightVal);
+        for (NodeLeftRightVal leftRightVal: leftRightVals) {
+            addChildToTree(queue, root, leftRightVal.leftVal, leftRightVal.rightVal);
         }
         return root;
     }
-
 
     private static void addChildToTree(Queue<Node> queue, Node<Integer> root, int leftVal, int rightVal) {
         Node node = queue.poll();
@@ -58,6 +57,17 @@ public class SwapNodes {
             node.right = rightNode;
             queue.add(rightNode);
         }
+    }
+
+    private static int[] getDepthsOfTreeToSwap(Scanner scanner) {
+        int N = scanner.nextInt();
+        int[] depths = new int[N];
+        int count = 0;
+        while (N > 0) {
+            depths[count++] = scanner.nextInt();
+            N--;
+        }
+        return depths;
     }
 
     private static void startSwappingNodes(Node<Integer> root, int[] depths) {
@@ -89,13 +99,15 @@ public class SwapNodes {
         }
     }
 
-    private static class BNodeChild {
+    private static class NodeLeftRightVal {
         int leftVal;
         int rightVal;
 
-        public BNodeChild(int leftVal, int rightVal) {
+        public NodeLeftRightVal(int leftVal, int rightVal) {
             this.leftVal = leftVal;
             this.rightVal = rightVal;
         }
     }
+
+
 }
