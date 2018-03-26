@@ -17,7 +17,7 @@ public class SwapNodes {
         Node root = createTreebyBNodes(vals);
 //        BTreePrinter.printNode(root);
         int[] depths = getDepthsOfTreeToSwap(scanner);
-        startSwappingNodes(root, depths);
+        startSwappingNodesAndPrintInorder(root, depths);
         scanner.close();
     }
 
@@ -70,7 +70,7 @@ public class SwapNodes {
         return depths;
     }
 
-    private static void startSwappingNodes(Node<Integer> root, int[] depths) {
+    private static void startSwappingNodesAndPrintInorder(Node<Integer> root, int[] depths) {
         for (int depth : depths) {
             swapTreeNode(root, depth);
 //            BTreePrinter.printNode(root);

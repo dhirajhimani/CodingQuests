@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 object AndThenExample extends App {
 //  andThen is just function composition. Given a function f

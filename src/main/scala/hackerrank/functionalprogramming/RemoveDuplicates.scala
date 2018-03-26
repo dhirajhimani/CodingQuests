@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 // https://www.hackerrank.com/challenges/remove-duplicates
 

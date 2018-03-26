@@ -1,8 +1,8 @@
 //https://github.com/nadav-dav/scala-examples/blob/master/src/main/scala/com/dav/SiepinskyTriangles.scala
 
-package hackerrank
+package hackerrank.functionalprogramming
 
-import hackerrank.FunctionalHelpers._
+import hackerrank.functionalprogramming.FunctionalHelpers._
 /**
   * This nice little exercise is described here
   * https://www.hackerrank.com/challenges/functions-and-fractals-sierpinski-triangles

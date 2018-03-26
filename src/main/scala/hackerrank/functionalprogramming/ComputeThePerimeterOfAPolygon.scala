@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 //https://www.hackerrank.com/challenges/lambda-march-compute-the-perimeter-of-a-polygon/problem
 

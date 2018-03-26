@@ -1,5 +1,4 @@
-package hackerrank
-
+package hackerrank.functionalprogramming
 
 //https://www.hackerrank.com/challenges/functions-or-not/problem
 

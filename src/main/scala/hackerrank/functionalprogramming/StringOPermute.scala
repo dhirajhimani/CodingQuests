@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 object StringOPermute extends App {
   var lines = io.Source.stdin.getLines()

@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 object Solution3 extends App {
 

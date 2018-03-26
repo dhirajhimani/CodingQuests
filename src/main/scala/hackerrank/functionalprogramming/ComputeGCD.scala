@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.functionalprogramming
 
 object ComputeGCD extends App {
   def gcd(x: Int, y: Int): Int = {
