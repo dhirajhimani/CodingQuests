@@ -42,6 +42,7 @@ object SiepinskyTriangles {
     repeat(splitAllTriangles, N)(Seq(startingTriangle))
   }
   private def extractPointsFromTriangles: Triangles => Points =  _ flatMap getColoredPointsFromATriangle
+
   private def paintPointsOnBoard(board:Board) : Points => Board = { points: Points  =>
     points.foldLeft(board.clone()) { (mutatedBoard: Board, point: Point) =>
       mutatedBoard(point.y).update(point.x, '1')
