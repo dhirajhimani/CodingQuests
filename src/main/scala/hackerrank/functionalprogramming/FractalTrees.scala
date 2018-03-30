@@ -22,7 +22,7 @@ object FractalTrees {
       splitBranch(iterations, size) andThen
       extractPointsFromBranches     andThen
       paintPointsOnBoard(newBoard)  andThen
-      printBoard)()
+      printBoardOnConsole)()
   }
 
   private def get[T](t:T): Unit => T = _ => t
@@ -33,13 +33,11 @@ object FractalTrees {
 
   private def splitBranch(N:Int, size:Int): Point => Branches = { startingPoint =>
     val branches =  splitBranchToThreeSmallerBranches(size)(startingPoint)
-    if (N <= 1) {
+    if (N <= 1)
       branches
-    } else {
-        branches ++ branches.takeRight(2).flatMap({
-          b => splitBranch(N - 1, size / 2)(getEndPointFromBranch(b))
-        })
-    }
+    else
+      // Among the three branches we need last two branches to extend further branches from their leafs(ends).
+      branches ++ branches.takeRight(2).flatMap(b => splitBranch(N - 1, size / 2)(getEndPointFromBranch(b)))
   }
 
   private def getEndPointFromBranch(branch: Branch): Point = Point(branch.end.x, branch.end.y)
@@ -73,14 +71,17 @@ object FractalTrees {
     }
   }
 
-  private def printBoard: Board => Unit = {
+  private def printBoardOnConsole: Board => Unit =
     board =>
-      val file = new File("TempFileToMatchChallengeArray.txt")
-      val bw = new BufferedWriter(new FileWriter(file))
+      for(row <- board) println(row.mkString)
+
+  // For Debugging
+  private def printBoardOnFile: Board => Unit = {
+    board =>
+      val tempFile = new File("TempFileToMatchChallengeArray.txt")
+      val bw = new BufferedWriter(new FileWriter(tempFile))
       for(row <- board) {
-        val line = row.mkString
-        println(line)
-        bw.write(line + "\n")
+        bw.write(row.mkString + "\n")
       }
       bw.close()
   }
