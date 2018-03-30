@@ -2,9 +2,6 @@ package hackerrank.functionalprogramming
 
 import java.io.{BufferedWriter, File, FileWriter}
 
-import scala.collection.mutable.ListBuffer
-import hackerrank.functionalprogramming.FunctionalHelpers._
-
 object FractalTrees_1 extends App {
 
   import FractalTrees._
@@ -27,6 +24,8 @@ object FractalTrees {
       paintPointsOnBoard(newBoard)  andThen
       printBoard)()
   }
+
+  private def get[T](t:T): Unit => T = _ => t
 
   private def aBasicPoint: Point = Point(x=63, y=49)
 
@@ -55,17 +54,15 @@ object FractalTrees {
   private def extractPointsFromBranches: Branches => Points =  _ flatMap getColoredPointsFromABranch
 
   private def getColoredPointsFromABranch(branch: Branch): Points = {
-    var counter = if (branch.begin.y > branch.end.y) -1 else 1
+    val counter = if (branch.begin.y > branch.end.y) -1 else 1
     if (branch.begin.y == branch.end.y) {
       for {
         x <- (branch.end.x) until (branch.begin.x)
       } yield Point(x, branch.begin.y)
     } else {
-      val points = new ListBuffer[Point]()
-      for (i <- 1 to branch.size) {
-        points += Point(branch.begin.x - i, branch.begin.y - i * counter)
-      }
-      points
+      for {
+        i <- 1 to branch.size
+      } yield Point(branch.begin.x - i, branch.begin.y - i * counter)
     }
   }
 
