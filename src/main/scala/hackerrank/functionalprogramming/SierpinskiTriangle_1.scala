@@ -2,7 +2,7 @@
 
 package hackerrank.functionalprogramming
 
-import hackerrank.functionalprogramming.FunctionalHelpers._
+import hackerrank.FunctionalHelpers._
 /**
   * This nice little exercise is described here
   * https://www.hackerrank.com/challenges/functions-and-fractals-sierpinski-triangles
@@ -68,13 +68,3 @@ object SiepinskyTriangles {
   private def splitAllTriangles: Triangles => Triangles = _ flatMap splitTriangleToThreeSmallerTriangles
 }
 
-object FunctionalHelpers {
-  def repeat[T](f: T=>T, times: Int)(start:T): T = {
-    if (times == 0) start
-    else repeat(f, times -1)(f(start))
-  }
-  def get[T](t:T): Unit => T = _ => t
-
-  def getAndPrint[T](t:T): Unit => T = _ => {println(t); t}
-  def getAndPrint2[T](): T => T = t => {println(t); t}
-}
