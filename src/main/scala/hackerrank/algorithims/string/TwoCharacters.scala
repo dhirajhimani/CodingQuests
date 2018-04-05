@@ -3,6 +3,20 @@ package hackerrank.algorithims.string
 import hackerrank.FunctionalHelpers._
 import scala.collection.mutable
 // https://www.hackerrank.com/challenges/two-characters/problem
+/*
+let me try to explain:-
+
+you just need to find the string which is logest String for alternate characters,
+like
+beabeefeab
+has babab and afa if you remove other chars
+
+1.Get the map of char with count
+2.Get the possible pairs that could be formed:- This is core, you have to get the pairs such that the difference of there count is 0,-1,or 1.
+3.See that the pairs you obtained are making a valid string after removing remaining chars,
+4.Print the largest string among you founded.
+*/
+
 
 object TwoCharacters_1 extends App {
 
@@ -21,20 +35,6 @@ object TwoCharacters {
       getAlternatePossiblePairs andThen
       validateAlternatePair(input) andThen
       printLargestStringFromList) ()
-
-
-
-    //      val charCount = getCharCountMap(input)
-    //      // pairs could be if the values differ by 1 or 0
-    //      val alternatePairs = getAlternatePossiblePairs(charCount.toList)
-    //
-    //      val longestAlternateStringList = validateAlternatePair(input, alternatePairs)
-    //
-    //      if (!longestAlternateStringList.isEmpty) {
-    //        longestAlternateStringList.sortWith(sortByLength)(0)
-    //      } else {
-    //        ""
-    //      }
   }
 
   private def getCharCountMap: String => List[(Char, Int)] = {
