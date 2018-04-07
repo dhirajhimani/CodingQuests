@@ -1,5 +1,7 @@
 package hackerrank.algorithims.implementation
 
+// https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+
 object BreakingTheRecords extends App {
 
   println(breakingRecords(Array(10, 5, 20, 20, 4, 5, 2, 25, 1)).mkString(" "))
