@@ -1,4 +1,4 @@
-package hackerrank.challenges
+package hackerrank.challenges.w37
 
 // https://www.hackerrank.com/contests/w37/challenges/simple-language
 
