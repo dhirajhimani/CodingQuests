@@ -3,7 +3,6 @@ package hackerrank.algorithims.search
 import scala.collection.mutable
 
 //https://www.hackerrank.com/challenges/hackerland-radio-transmitters/problem
-// Uses lots of memory, timeout Exception
 object HackerlandRadioTransmitters_UsingGreedy extends App {
 
     println(hackerlandRadioTransmitters(Array(1,2,3,4,5), 1))
