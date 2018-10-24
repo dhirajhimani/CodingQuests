@@ -4,7 +4,6 @@ object CodeArena6 extends App {
 
   val T = scala.io.StdIn.readLine().trim.toInt
 
-
   for (i <- 1 to T) {
     val N_Q = scala.io.StdIn.readLine().trim.split(" ").map(_.toInt)
 
